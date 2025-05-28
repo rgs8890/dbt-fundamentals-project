@@ -17,3 +17,9 @@ Try running the following commands:
 ## Shortcuts:
 __ -> This shows all the shortcuts
 {{ ref('') }} -- Another Shortcut
+
+## Built-In Tests
+-- unique
+-- not_null
+-- accepted_values
+-- relationships
