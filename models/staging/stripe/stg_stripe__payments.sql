@@ -5,4 +5,4 @@ select
     status,
     amount / 100 as amount,
     created
-from dbt_rsunku.stripe_payments
+from {{ source('stripe', 'payments') }}
