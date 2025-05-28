@@ -6,6 +6,11 @@ sources:
     schema: jaffle_shop
     tables:
       - name: customers
+        columns:
+          - name: customer_id
+            tests: 
+              - unique
+              - not_null
         loaded_at_field: _etl_loaded_at
         freshness:
           warn_after: { count: 24, period: hour }
