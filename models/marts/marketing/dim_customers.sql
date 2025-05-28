@@ -36,5 +36,4 @@ final as (
     left join customers_orders o on c.customer_id = o.customer_id
     left join payments p on c.customer_id = p.customer_id
 )
-
 select * from final
