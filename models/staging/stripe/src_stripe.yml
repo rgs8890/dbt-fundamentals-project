@@ -5,5 +5,4 @@ sources:
     database: dbt_rsunku
     schema: stripe
     tables:
-    - name: payments
-    - freshness: null
+    - name: payment

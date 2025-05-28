@@ -5,4 +5,4 @@ select
     status,
     amount / 100 as amount,
     created
-from {{ source('stripe', 'payments') }}
+from {{ source('stripe', 'payment') }}
