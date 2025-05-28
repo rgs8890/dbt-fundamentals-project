@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: a clone of a Postgres application database
+    database: dbt_rsunku
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        description: raw customers data
+        columns:
+          - name: customer_id
+            tests: 
+              - unique
+              - not_null
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: { count: 24, period: hour }
+          error_after: { count: 1, period: day }
+      - name: orders
+        description: raw_orders_data
+        loaded_at_field: _etl_loaded_at
+        freshness:
+          warn_after: { count: 24, period: hour }
+          error_after: { count: 1, period: day }

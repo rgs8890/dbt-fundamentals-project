@@ -1,26 +1,5 @@
 version: 2
 
-sources:
-  - name: jaffle_shop
-    database: dbt_rsunku
-    schema: jaffle_shop
-    tables:
-      - name: customers
-        columns:
-          - name: customer_id
-            tests: 
-              - unique
-              - not_null
-        loaded_at_field: _etl_loaded_at
-        freshness:
-          warn_after: { count: 24, period: hour }
-          error_after: { count: 1, period: day }
-      - name: orders
-        loaded_at_field: _etl_loaded_at
-        freshness:
-          warn_after: { count: 24, period: hour }
-          error_after: { count: 1, period: day }
-
 models:
   - name: stg_jaffle_shop__customers
     description: one unique customer per row
